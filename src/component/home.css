@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.tabbar{
+  background-color: #399;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-direction: center;
+  align-items: center;
+}
+.tabbar .item{
+  /* flex:1 */
+  height: 100px;
+  line-height: 100px;
+  /* text-align: center; */
+}
+.home {
+  padding-left: 100px;
+}
+.home .header{
+  line-height: 50px;
+  width: 100%;
+  margin: 0;
+  background-color: #396;
+}
+
+a{
+   text-decoration: none;
+   color: #ccc;
+}
+a:hover{
+  color: #87d895;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //ES6中的class语法 --其实就是构造函数的另一个写法(语法糖)
+    // function Person() {
+    //   this.name = "名字"
+    //   this.age = 29
+    //   this.sing = function () {
+    //     console.log("Person的sing方法");
+
+    //   }
+    // }
+
+    // let p1 = new Person()
+    // console.log(p1.name);
+    // p1.sing()
+
+
+
+    // class语法
+
+    /**class 名字 {
+      ...
+    }*/
+
+    class Person {
+      constructor() {
+        this.name = "名字"
+        this.age = 29
+      }
+      // 方法函数是同级直接写,不需要this
+      sing = function () {
+          console.log("class定义的Person的sing方法");
+
+        }
+    }
+
+    // let p2 = new Person()
+    // p2.sing()
+
+    /**实现继承 class 子 extend 父{
+     
+    }
+    
+    */
+
+    //------------------复杂写法----------------
+    //继承的意思是 父亲的东西 我都可以用
+    class Teacher extends Person{
+      
+      constructor(){
+        // 继承前必须在this前调用super
+        // super是语法规定,相当于调用 父亲的 constructor
+
+        super() //super调用父亲代码执行一遍,我们才能继承
+        
+        this.score = 1000000
+        //除了继承的多了一个score
+      }
+      say(){
+        console.log('teach的say方法');
+        
+      }
+    }
+
+    let t1 = new Teacher()
+
+    console.log(t1.name);
+    t1.sing()
+    t1.say() //自己的方法也是可以用的
+    
+//---------------简单写法-----------------------
+
+class Teacher extends Person{
+  score = 100000 
+  //↑↑↑↑↑这样写代表,代码帮你写了constructor 和 super
+  say(){
+        console.log('teach的say方法');
+        
+      }
+}
+
+
+  </script>
+</body>
+
+</html>

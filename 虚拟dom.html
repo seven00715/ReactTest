@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="box">
+    <ul>
+      <li class="ilclass">
+        啊啊啊
+      </li>
+      <li class="ilclass">
+        哈哈哈哈
+      </li>
+    </ul>
+  </div>
+  <!-- 原生html 会被渲染dom树 
+      虚拟dom?使用js对象 来 模拟对应上 页面上的每一个元素
+      为什么要有虚拟dom?
+      如果页面要修改 li dom 操作效率都不高
+      如果我要修改一万次 dom 要操作一万次
+    如果有了虚拟dom  -- 每次都会先比较虚拟dom 再去看是否需要更新页面
+      我要修改一万次 在操作之前先在虚拟dom 对象里面 去判断
+      每次都会拿到原来的虚拟动漫 和  修改的比较 如果发现 虚拟dom没有改变
+      没有改变 就不会操作页面的dom
+
+      js对象 js代码 执行起来比操作dom 效率高一万倍
+  -->
+
+  <script>
+
+    let obj = {
+      type: "div",
+      props: {
+        class: "box", children: {
+          type: "ul",
+          props: {
+            children: [
+              { type: "li", props: { children: {} }, content: "啊啊啊" },
+              { type: "li", props: { children: {} }, content: "哈哈哈哈" }
+            ]
+          },
+        },
+
+      }
+    }
+  </script>
+</body>
+
+</html>

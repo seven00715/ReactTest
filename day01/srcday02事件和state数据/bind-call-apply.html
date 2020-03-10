@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //bind apply call 可以改变this的指向
+
+    function add(){
+      console.log('this',this);
+      
+    }
+
+    let obj = {
+      name : '我是obj'
+    }
+
+    //add();直接调用 this-----window
+    //如果函数是  函数() 调用name一般指向window
+    // 如果函数是 xxx.函数名 一般指向 xxx 调用者
+    // 函数.call(对象,参数1,参数2..) 1.把函数的this指向写的对象 2.直接立即执行
+    // add.call(obj)
+
+    // 函数.apply(对象,[参数1,参数2...]) 1.把函数的this指向写的对象 2.直接立即执行
+    // add.apply(obj)
+
+    // 函数.bind(obj)  1. 改变了this的指向写的对象 2. bind不会立即执行,需要手动调用
+
+    add.bind(obj)()
+
+    
+
+
+    
+  </script>
+</body>
+</html>
